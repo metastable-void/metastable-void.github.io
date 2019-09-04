@@ -1,0 +1,16 @@
+
+a {
+color: inherit;
+}
+
+a:link {
+text-decoration: underline;
+}
+
+a:link[href]::after {
+content: ' ('  attr(href)  ')';
+}
+
+nav a:link[href]::after {
+content: none;
+}

@@ -1,0 +1,12 @@
+
+$list_margin_block: 1em;
+
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+margin-block-start: $list_margin_block;
+margin-block-end: $list_margin_block;
+padding-inline-start: 3rem;
+}
+
+

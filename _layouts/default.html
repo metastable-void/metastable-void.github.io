@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ site.lang | default: "en-US" }}" xml:lang="{{ site.lang | default: "en-US" }}">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; upgrade-insecure-requests"/>
+<meta name="viewport" content="initial-scale=1,width=device-width"/>
+<title>{{ page.title }} : {{ site.title }}</title>
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}"/>
+</head>
+<body>
+<nav id="top-nav">
+<ul>
+<li id="top-site-logo"><a href="/"><span>$</span> <span>exec</span> su -</a></li>
+<li><a href="/projects/">Projects</a></li>
+<li><a href="/posts/">Posts</a></li>
+</ul>
+</nav>
+<article id="main-article">
+{{ content }}
+</article>
+<footer id="main-footer">
+<p>Exec.su - © {{ site.time | split: "-" | first }}</p>
+</footer>
+</body>
+</html>

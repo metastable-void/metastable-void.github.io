@@ -54,6 +54,7 @@ margin: 0;
 font-size: 1.5rem;
 font-weight: bold;
 text-decoration: none !important;
+writing-mode: horizontal-tb;
 }
 
 #top-nav::after {
@@ -125,11 +126,15 @@ overflow: auto;
 }
 
 #main-footer {
+position: absolute;
+inset-block-end: 0;
+inline-size: 100%;
 margin: 0;
 padding: 0;
 background-color: $main_footer_bg_color;
 color: $main_footer_text_color;
 text-shadow: 0 0 .1em $main_footer_text_shadow;
+writing-mode: horizontal-tb;
 }
 
 #main-footer a {

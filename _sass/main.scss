@@ -30,10 +30,6 @@ color: $body_text_color;
 font-family: $body_font_family;
 text-shadow: 0 0 .1em $body_text_shadow;
 margin: 0;
-display: flex;
-flex-direction: column;
-min-width: 100%;
-min-height: 100%;
 -ms-user-select: none;
 -webkit-user-select: none;
 -moz-user-select: none;
@@ -50,17 +46,18 @@ writing-mode: vertical-rl;
 
 // specific elements
 #top-nav {
+position: fixed;
+inset-block-start: 0;
+inset-inline-start: 0;
+inline-size: 100%;
 margin: 0;
 font-size: 1.5rem;
 font-weight: bold;
 text-decoration: none !important;
 writing-mode: horizontal-tb;
-}
-
-#top-nav::after {
-content: '';
-display: block;
-block-size: 4rem;
+background-color: $top_nav_bg_color;
+color: $top_nav_text_color;
+text-shadow: 0 0 .1em $top_nav_text_shadow;
 }
 
 #top-nav a {
@@ -68,9 +65,6 @@ color: $top_nav_link_text_color;
 }
 
 #top-nav > ul {
-position: fixed;
-inset-block-start: 0;
-inline-size: 100%;
 display: flex;
 flex-direction: row;
 list-style: none;
@@ -78,9 +72,6 @@ margin: 0;
 padding: 0;
 block-size: 4rem;
 overflow: auto;
-background-color: $top_nav_bg_color;
-color: $top_nav_text_color;
-text-shadow: 0 0 .1em $top_nav_text_shadow;
 }
 
 #top-nav > ul > li {
@@ -119,15 +110,19 @@ color: #ffcea1;
 #main-article {
 padding-block: 1rem;
 padding-inline: 2rem;
-margin-inline: auto;
+margin-top: 4rem;
+margin-bottom: 4rem;
+margin-inline-start: auto;
+margin-inline-end: auto;
 max-inline-size: 32em;
 flex-grow: 1;
 overflow: auto;
 }
 
 #main-footer {
-position: absolute;
+position: fixed;
 inset-block-end: 0;
+inset-inline-start: 0;
 inline-size: 100%;
 margin: 0;
 padding: 0;

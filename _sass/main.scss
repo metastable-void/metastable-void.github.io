@@ -1,20 +1,18 @@
-$body_bg_color: #f2f2f2;
-$body_text_color: #666;
+
 $body_font_family: system-ui, sans-serif;
-$body_text_shadow: #fff;
-$body_link_text_color: #000;
+
+$base_bg_color: #666;
+$base_text_color: #f2f2f2;
+$base_link_text_color: #fff;
+$base_text_shadow: #000;
+
+$content_bg_color: #f2f2f2;
+$content_text_color: #666;
+$content_link_text_color: #000;
+$content_text_shadow: #fff;
 
 $top_nav_logo_font_family: monospace, system-ui, sans-serif;
-$top_nav_bg_color: #666;
-$top_nav_text_color: #f2f2f2;
-$top_nav_link_text_color: #fff;
-$top_nav_text_shadow: #000;
 $top_nav_active_shadow: #000;
-
-$main_footer_bg_color: #666;
-$main_footer_text_color: #f2f2f2;
-$main_footer_link_text_color: #fff;
-$main_footer_text_shadow: #000;
 
 
 // general styles
@@ -23,10 +21,10 @@ $main_footer_text_shadow: #000;
 }
 
 body {
-background-color: $main_footer_bg_color;
-color: $body_text_color;
+background-color: $base_bg_color;
+color: $content_text_color;
 font-family: $body_font_family;
-text-shadow: 0 0 .1em $body_text_shadow;
+text-shadow: 0 0 .1em $content_text_shadow;
 margin: 0;
 margin-top: 4rem;
 -ms-user-select: none;
@@ -36,7 +34,7 @@ margin-top: 4rem;
 
 a {
 text-decoration: none;
-color: $body_link_text_color;
+color: $content_link_text_color;
 }
 
 .vertical-rl {
@@ -54,13 +52,13 @@ font-size: 1.5rem;
 font-weight: bold;
 text-decoration: none !important;
 writing-mode: horizontal-tb;
-background-color: $top_nav_bg_color;
-color: $top_nav_text_color;
-text-shadow: 0 0 .1em $top_nav_text_shadow;
+background-color: $base_bg_color;
+color: $base_text_color;
+text-shadow: 0 0 .1em $base_text_shadow;
 }
 
 #top-nav a {
-color: $top_nav_link_text_color;
+color: $base_link_text_color;
 }
 
 #top-nav > ul {
@@ -119,13 +117,13 @@ overflow: auto;
 #main-footer {
 margin: 0;
 padding: 0;
-background-color: $main_footer_bg_color;
-color: $main_footer_text_color;
-text-shadow: 0 0 .1em $main_footer_text_shadow;
+background-color: $base_bg_color;
+color: $base_text_color;
+text-shadow: 0 0 .1em $base_text_shadow;
 }
 
 #main-footer a {
-color: $main_footer_link_text_color;
+color: $base_link_text_color;
 }
 
 #main-footer > p {

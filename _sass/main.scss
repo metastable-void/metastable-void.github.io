@@ -19,6 +19,11 @@ $main_footer_text_shadow: #000;
 
 // general styles
 
+:root {
+min-width: 100vw;
+min-height: 100vh;
+}
+
 body {
 background: $body_bg_color;
 color: $body_text_color;
@@ -27,8 +32,8 @@ text-shadow: 0 0 .1em $body_text_shadow;
 margin: 0;
 display: flex;
 flex-direction: column;
-min-width: 100vw;
-min-height: 100vh;
+min-width: 100%;
+min-height: 100%;
 -ms-user-select: none;
 -webkit-user-select: none;
 -moz-user-select: none;

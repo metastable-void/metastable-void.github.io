@@ -23,7 +23,7 @@ $main_footer_text_shadow: #000;
 }
 
 body {
-background: $body_bg_color;
+background-color: $main_footer_bg_color;
 color: $body_text_color;
 font-family: $body_font_family;
 text-shadow: 0 0 .1em $body_text_shadow;
@@ -107,11 +107,12 @@ color: #ffcea1;
 }
 
 #main-article {
+background-color: $body_bg_color;
 padding-block: 1rem;
 padding-inline: 2rem;
 margin-inline: auto;
 max-inline-size: 32em;
-flex-grow: 1;
+// flex-grow: 1;
 overflow: auto;
 }
 

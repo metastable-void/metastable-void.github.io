@@ -4,7 +4,7 @@ title: "@_uts2"
 page.lang: ja
 ---
 
-# @_uts2
+# Twitter account: @_uts2
 
 - 名前: 真空 (しんくう，zhenking、まそら, etc.)
 - 標語: **真空は準安定** (假真空)

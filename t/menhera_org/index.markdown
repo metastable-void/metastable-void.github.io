@@ -5,6 +5,7 @@ page.lang: ja
 ---
 
 # Twitter account: @menhera_org
+メンヘラ.org → [公式サイト](https://menhera.org/)
 
 - 名前: メンヘラ.org（準公式アカウント）
 - 標語: **真空の相転移** (真空相变)

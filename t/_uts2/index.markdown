@@ -6,7 +6,7 @@ page.lang: ja
 
 # Twitter account: @_uts2
 
-- 名前: 真空 (しんくう，zhenking、まそら, etc.)
+- 名前: 真空 (しんくう，zhenkong、まそら, etc.)
 - 標語: **真空は準安定** (假真空)
 - Twitter: [@_uts2](https://twitter.com/_uts2)
 - 属性: 年金受給者・まだ一応どこかの大学に籍が残っている大学生（放校になりそう）

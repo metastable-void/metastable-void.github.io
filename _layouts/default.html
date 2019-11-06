@@ -1,11 +1,20 @@
+---
+csp: "default-src 'none'; style-src 'self'; form-target 'self'; upgrade-insecure-requests"
+---
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ site.lang | default: "en-US" }}" xml:lang="{{ site.lang | default: "en-US" }}">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ site.lang }}" xml:lang="{{ site.lang }}">
 <head>
 <meta charset="utf-8"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; upgrade-insecure-requests"/>
+<meta http-equiv="Content-Security-Policy" content="{{ layout.csp }}"/>
 <meta name="viewport" content="initial-scale=1,width=device-width"/>
 <title>{{ page.title }} : {{ site.title }}</title>
 <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}"/>
+<meta property="og:title" content="{{ page.title }}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="{{ page.url | absolute_url }}"/>
+<meta property="og:image" content="{{ '/assets/img/night-lights.jpg' | absolute_url }}"/>
+<meta property="og:description" content="{{ page.description | default: site.title }}"/>
+<meta property="og:site_name" content="{{ site.title }}"/>
 </head>
 <body>
 <nav id="top-nav">
@@ -15,7 +24,7 @@
 <li><a href="/posts/">Posts</a></li>
 </ul>
 </nav>
-<article id="main-article"{% if page.lang %} lang="{{ page.lang }}" xml:lang="{{ page.lang }}"{% endif %}>
+<article id="main-article" lang="{{ page.lang | default: site.lang }}" xml:lang="{{ page.lang | default: site.lang }}">
 {{ content }}
 </article>
 <footer id="main-footer">

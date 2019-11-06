@@ -1,0 +1,18 @@
+---
+layout: default-scripted
+title: "セクシャリティ診断"
+description: "いくつかの質問に答えるだけで，あなたのセクシャリティを分析します"
+---
+<h1>{{ page.title }}</h1>
+<p>いくつかの質問に答えるだけで，あなたのセクシャリティを分析します．</p>
+<form id="form"></form>
+<section>
+<h2>結果</h2>
+<p id="result"></p>
+<form action="https://twitter.com/share" target="_blank">
+<input type="hidden" name="url" value="https://www.exec.su/sexuality-test/"/>
+<input type="hidden" name="hashtags" value="セクシャリティ診断"/>
+<input type="hidden" id="share-text" name="text" value="" />
+<button>Share with Twitter</button>
+</section>
+<script type="module" src="/sexuality-test/test.mjs"></script>

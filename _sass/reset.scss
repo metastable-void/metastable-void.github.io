@@ -1,12 +1,32 @@
+// -*- tab-width: 2; indent-tabs-mode: nil -*-
 
 $list_margin_block: 1em;
 
 ul, menu, dir {
-display: block;
-list-style-type: disc;
-margin-block-start: $list_margin_block;
-margin-block-end: $list_margin_block;
-padding-inline-start: 3rem;
+  display: block;
+  list-style-type: disc;
+  margin-block-start: $list_margin_block;
+  margin-block-end: $list_margin_block;
+  padding-inline-start: 3rem;
 }
 
+h1 {
+  font-size: 200%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 125%;
+}
+
+h4 {
+  font-size: 111.1111111111111111%;
+}
+
+h5, h6 {
+  font-size: 100%;
+}
 

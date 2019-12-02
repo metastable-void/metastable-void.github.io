@@ -64,7 +64,11 @@ padding-block-end: .25em;
 flex-grow: 1;
 }
 
-::slotted(:not(:first-child))::before {
+::slotted(*)::before {
 content: '  ';
+}
+
+::slotted(:first-child)::before {
+content: '';
 }
 

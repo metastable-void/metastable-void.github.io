@@ -46,7 +46,7 @@ const recursiveFactor = async input => {
 	const primeFactors = [];
 	input = bigInt (input);
 	if (input.lesser (4) || input.isProbablePrime ()) {
-		primeFactors.push (input + '');
+		primeFactors.push (input.toString ());
 	} else {
 		const [a, b] = await factor (input);
 		const factors1 = await recursiveFactor (a);

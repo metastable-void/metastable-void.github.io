@@ -110,9 +110,12 @@ color: #ffcea1;
 
 #main-article {
 background-color: $content_bg_color;
-padding-block: 1rem;
-padding-inline: 2rem;
-margin-inline: auto;
+padding-block-start: 1rem;
+padding-block-end: 1rem;
+padding-inline-start: 2rem;
+padding-inline-end: 2rem;
+margin-inline-start: auto;
+margin-inline-end: auto;
 max-inline-size: 32em;
 // flex-grow: 1;
 overflow: auto;
@@ -132,7 +135,10 @@ color: $base_link_text_color;
 
 #main-footer > p {
 margin: 0;
-padding: 1rem 2rem;
+padding-block-start: 1rem;
+padding-block-end: 1rem;
+padding-inline-start: 2rem;
+padding-inline-end: 2rem;
 }
 
 .times:not(:first-of-type)::before {

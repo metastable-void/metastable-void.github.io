@@ -1,0 +1,20 @@
+---
+layout: default-scripted
+title: "整数の素因数分解"
+description: "二次篩 (quadratic sieve) を使ってウェブブラウザだけを使ってなるべく高速に整数を素因数分解します．"
+---
+<link rel="preload" as="style" href="/assets/css/console-value.css"/>
+<link rel="preload" as="style" href="/assets/css/console-output.css"/>
+<h1>{{ page.title }}</h1>
+<p>二次篩 (quadratic sieve) を使ってウェブブラウザだけを使ってなるべく高速に整数を素因数分解します．</p>
+<form action="/" id="input-form">
+<p class="integer-factorization">
+<label for="input">素因数分解する自然数:</label>
+<input id="input" type="text" name="input" pattern="\s*[0-9]+\s*"/>
+<button id="button-start">計算する</button>
+</p>
+</form>
+<p><span id="input-value"></span> = <span id="result"></span></p>
+<div id="console"></div>
+<script defer="" src="/factors/BigInteger.min.js"></script>
+<script type="module" src="/factors/factors.mjs"></script>

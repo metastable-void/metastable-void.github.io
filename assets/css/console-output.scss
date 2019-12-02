@@ -1,0 +1,70 @@
+---
+---
+
+:host {
+display: flex;
+font-family: monospace, system-ui, sans-serif;
+background-color: #fff;
+color: #000;
+white-space: pre-wrap;
+}
+
+:host([data-level="warn"]) {
+background-color: #fdf5b6;
+}
+
+:host([data-level="error"]) {
+background-color: #ffe5e5;
+}
+
+:host(:not(:first-of-type)) {
+border-block-start: solid .0625rem #ccc;
+}
+
+:host::before {
+content: '';
+display: block;
+box-sizing: border-box;
+min-width: 1.5em;
+min-height: 1.5em;
+text-align: center;
+margin: 0;
+border: none;
+padding-block-start: .25em;
+padding-block-end: .25em;
+border-inline-start: solid .25rem #ccc;
+margin-inline-end: .25em;
+}
+
+:host([data-level="debug"])::before {
+content: '';
+}
+
+:host([data-level="info"])::before {
+content: '\2139';
+border-color: #6797f4;
+color: #6797f4;
+}
+
+:host([data-level="warn"])::before {
+content: '\26a0';
+border-color: #f2cc58;
+color: #000;
+}
+
+:host([data-level="error"])::before {
+content: '\2297';
+border-color: #f25858;
+color: #f25858;
+}
+
+#values {
+padding-block-start: .25em;
+padding-block-end: .25em;
+flex-grow: 1;
+}
+
+::slotted(:not(:first-child))::before {
+content: '  ';
+}
+

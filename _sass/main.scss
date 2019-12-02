@@ -135,3 +135,20 @@ margin: 0;
 padding: 1rem 2rem;
 }
 
+.times:not(:first-of-type)::before {
+content: '\20\22c5\a0';
+}
+
+.integer-factorization > label {
+display: block;
+padding-block: .25em;
+}
+
+.integer-factorization > #input, .integer-factorization > #button-start {
+display: block;
+box-sizing: border-box;
+margin: 0;
+inline-size: 100%;
+padding: .25em;
+}
+

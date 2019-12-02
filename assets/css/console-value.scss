@@ -1,0 +1,50 @@
+---
+---
+
+:host {
+display: inline;
+color: #666;
+}
+
+:host([data-kind="empty"]) {
+color: #aaa;
+}
+
+:host([data-kind="number"]) {
+color: #0064ff;
+}
+
+:host([data-kind="string"]) {
+color: #d52800;
+}
+
+:host([data-kind="keyword"]) {
+color: #059900;
+}
+
+:host([data-kind="array"]) #properties::before {
+content: ' [ ';
+}
+
+:host([data-kind="array"]) #properties::after {
+content: ' ]';
+}
+
+:host([data-kind="object"]) #properties::before {
+content: ' { ';
+}
+
+:host([data-kind="object"]) #properties::after {
+content: ' }';
+}
+
+#properties > [data-role="element"]:not(:last-child)::after {
+content: ', ';
+color: #666;
+}
+
+#properties > [data-role="key"]::after {
+content: ': ';
+color: #666;
+}
+

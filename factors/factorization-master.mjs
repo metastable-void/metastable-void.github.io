@@ -93,8 +93,6 @@ export async function* factorize (n) {
 		worker2.postMessage ({command: 'sieving'
 			, input: n.toString (), primeBase, multiples, sqrt, offset: -1, step: -1});
 		
-		let worker1Count = 0, worker2Count = 0;
-		
 		const factors = await new Promise ((resolve, reject) => {
 			// Factorization of squares over the factor base
 			const smoothSquaresFactors = [];
@@ -102,6 +100,7 @@ export async function* factorize (n) {
 			// numbers whose square is B-smooth
 			const smoothRoots = [];
 			
+			let worker1Count = 0, worker2Count = 0;
 			let terminated = false;
 			const smoothFoundCallback = function callback (ev) {
 				const {data, target} = ev;
@@ -134,7 +133,7 @@ export async function* factorize (n) {
 						worker2.removeEventListener ('message', smoothFoundCallback);
 						worker1.terminate ();
 						worker2.terminate ();
-						console.log ('Terminating sieving workers.', smoothCount, 'B-smooth square roots modulo n');
+						console.log ('Terminating sieving workers.', smoothRoots.length, 'B-smooth square roots modulo n');
 						console.log ('Worker 1:', worker1Count, 'Worker 2:', worker2Count);
 						resolve (factors);
 					})

@@ -1646,6 +1646,9 @@ const sieving = async (input, primeBase, multiples, sqrt, offset, step) => {
 							const root = ceil_sqrt_n.add (j * step).add (offset);
 							postMessage ({command: 'smooth_found'
 								, root, factors: tmp_factors[j]});
+						} else if (tmp_vector[j].equals (0)) {
+							console.log ('Invalid division:', {start, p, offset, j});
+							throw new Error ('Failed');
 						}
 					}
 				}

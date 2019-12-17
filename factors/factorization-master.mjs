@@ -91,8 +91,8 @@ export async function* factorize (n) {
 		
 		worker1.postMessage ({command: 'sieving'
 			, input: n.toString (), primeBase, multiples, sqrt, offset: 0, step: 1});
-		worker2.postMessage ({command: 'sieving'
-			, input: n.toString (), primeBase, multiples, sqrt, offset: -1, step: -1});
+		/*worker2.postMessage ({command: 'sieving'
+			, input: n.toString (), primeBase, multiples, sqrt, offset: -1, step: -1});*/
 		
 		const factors = await new Promise ((resolve, reject) => {
 			// Factorization of squares over the factor base
@@ -108,11 +108,13 @@ export async function* factorize (n) {
 				if (terminated) return;
 				if ('smooth_found' !== data.command) return;
 				
+				/*
 				if (target === worker1) {
 					worker1Count++;
 				} else if (target === worker2) {
 					worker2Count++;
 				}
+				*/
 				
 				smoothSquaresFactors.push (data.factors);
 				smoothRoots.push (data.root);
@@ -135,7 +137,7 @@ export async function* factorize (n) {
 						worker1.terminate ();
 						worker2.terminate ();
 						console.log ('Terminating sieving workers.', smoothRoots.length, 'B-smooth square roots modulo n');
-						console.log ('Worker 1:', worker1Count, 'Worker 2:', worker2Count);
+						//console.log ('Worker 1:', worker1Count, 'Worker 2:', worker2Count);
 						resolve (factors);
 					})
 					.catch (e => {
@@ -144,7 +146,7 @@ export async function* factorize (n) {
 				}
 			};
 			worker1.addEventListener ('message', smoothFoundCallback);
-			worker2.addEventListener ('message', smoothFoundCallback);
+			//worker2.addEventListener ('message', smoothFoundCallback);
 		});
 		
 		console.info ('Factors found with quadratic sieve');

@@ -1637,22 +1637,20 @@ const sieving = async (input, primeBase, multiples, sqrt, offset, step) => {
 			for (let js = start; js.some (j => j < block_size); js = js.map (j => j + p)) {
 				for (let j of js) {
 					if (j >= 0 && j < block_size) {
+						if (!tmp_vector[j].isDivisibleBy (p)) {
+							console.log ('Invalid division:', {start, p, offset, j});
+							throw new Error ('Failed');
+						}
+						
 						do {
 							tmp_factors[j][i]++;
 							tmp_vector[j] = tmp_vector[j].divide (p);
 						} while (tmp_vector[j].isDivisibleBy (p));
 						
-						if (step < 0) {
-							console.log ('Worker 2:', {start, p, offset, j});
-						}
-						
 						if (tmp_vector[j].equals (1)) {
 							const root = ceil_sqrt_n.add (j * step).add (offset);
 							postMessage ({command: 'smooth_found'
 								, root, factors: tmp_factors[j]});
-						} else if (tmp_vector[j].equals (0)) {
-							console.log ('Invalid division:', {start, p, offset, j});
-							throw new Error ('Failed');
 						}
 					}
 				}

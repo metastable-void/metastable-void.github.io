@@ -85,6 +85,7 @@ export async function* factorize (n) {
 		});
 		
 		console.info ('starting sieving: n =', n.toString (), '(' + n.bitLength ().toString () + ' bits)...');
+		console.log ('Prime base size:', primeBaseSize);
 		const time_sieving_start = +new Date;
 		let last_tick = time_sieving_start;
 		

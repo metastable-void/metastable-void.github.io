@@ -165,6 +165,7 @@ export async function* factorize (n) {
 export async function getPrimeDecomposition (n) {
 	const factorsMap = new Map;
 	for await (let factor of factorize (n)) {
+		factor = factor.toString ().trim ();
 		const count = factorsMap.has (factor) ? factorsMap.get (factor) : 0;
 		factorsMap.set (factor, count + 1);
 	}

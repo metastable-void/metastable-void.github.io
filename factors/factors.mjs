@@ -321,6 +321,7 @@ input_form.addEventListener ('submit', ev => {
 		input_form.input.disabled = false;
 		button_start.disabled = false;
 		
+		result.textContent = '';
 		for (let [p, n] of factorsMap) {
 			result.appendChild (new PrimeFactor (p.toString (), n.toString ()))
 			.classList.add ('times');

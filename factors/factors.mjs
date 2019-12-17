@@ -253,17 +253,6 @@ class PrimeFactor extends HTMLElement {
 
 customElements.define ('prime-factor', PrimeFactor);
 
-const result = document.getElementById ('result');
-
-const printFactors = (factors) => {
-	result.textContent = '';
-	const keys = [... factors.keys ()].sort ((a, b) => bigInt (a).compare (b));
-	for (let p of keys) {
-		const e = factors.get (p);
-		const element = result.appendChild (new PrimeFactor (p + '', e + ''));
-		element.classList.add ('times');
-	}
-};
 
 const consoleContainer = document.getElementById ('console');
 const trueConsole = window.console;
@@ -309,48 +298,34 @@ window.console = {
 	},
 };
 
-const dedicatedWorker = new Worker ('/factors/dedicated-worker.js');
-dedicatedWorker.onerror = e => {
-	console.error (e);
-};
+import {factorize, getPrimeDecomposition} from './factorization-master.mjs';
+
 
 let computing = false;
 const input_value = document.getElementById ('input-value');
 const input_form = document.getElementById ('input-form');
 const button_start = document.getElementById ('button-start');
-const workerMessageListener = ev => {
-	if (!ev.data) {
-		console.log ('Empty message from worker');
-		return;
-	}
-	
-	if ('factors' == ev.data.type) {
-		computing = false;
-		input_form.input.disabled = false;
-		button_start.disabled = false;
-		console.log ('factors:', ... ev.data.factors, 'computed in:', ev.data.duration, 'ms');
-		
-		input_value.textContent = ev.data.input;
-		const map = new Map;
-		for (let p of ev.data.factors) {
-			const count = map.has (p) ? map.get (p) : 0;
-			map.set (p, count + 1);
-		}
-		printFactors (map);
-	} else if ('console' == ev.data.type) {
-		console[ev.data.level] (... ev.data.values);
-	} else {
-		console.log ('Unknown message from worker:', ev.data);
-	}
-};
-dedicatedWorker.addEventListener ('message', workerMessageListener);
+const result = document.getElementById ('result');
 
 input_form.addEventListener ('submit', ev => {
 	ev.preventDefault ();
 	if (computing) return;
+	
 	input_form.input.disabled = true;
 	button_start.disabled = true;
 	dedicatedWorker.postMessage ({type: 'pf', input: input_form.input.value.trim ()});
 	computing = true;
+	
+	getPrimeDecomposition (input_form.input.value.trim ())
+	.then (factorsMap => {
+		computing = false;
+		input_form.input.disabled = false;
+		button_start.disabled = false;
+		
+		for (let [p, n] of factorsMap) {
+			result.appendChild (new PrimeFactor (p.toString (), n.toString ()))
+			.classList.add ('times');
+		}
+	});
 });
 

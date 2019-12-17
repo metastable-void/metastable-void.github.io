@@ -313,7 +313,6 @@ input_form.addEventListener ('submit', ev => {
 	
 	input_form.input.disabled = true;
 	button_start.disabled = true;
-	dedicatedWorker.postMessage ({type: 'pf', input: input_form.input.value.trim ()});
 	computing = true;
 	
 	getPrimeDecomposition (input_form.input.value.trim ())

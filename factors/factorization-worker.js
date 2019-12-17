@@ -1642,6 +1642,10 @@ const sieving = async (input, primeBase, multiples, sqrt, offset, step) => {
 							tmp_vector[j] = tmp_vector[j].divide (p);
 						} while (tmp_vector[j].isDivisibleBy (p));
 						
+						if (step < 0) {
+							console.log ('Worker 2:', {start, p, offset, j});
+						}
+						
 						if (tmp_vector[j].equals (1)) {
 							const root = ceil_sqrt_n.add (j * step).add (offset);
 							postMessage ({command: 'smooth_found'

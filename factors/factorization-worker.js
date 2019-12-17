@@ -1632,11 +1632,11 @@ const sieving = async (input, primeBase, multiples, sqrt, offset, step) => {
 		
 		for (let i = 0; i < primeBaseSize; i++) {
 			const p = primeBase[i];
-			const start = multiples[i].map (x => ((((p - ((p - x + offset % p) % p) + p * Math.sign (offset)) % p) * step) % p + p) % p);
+			const start = multiples[i].map (x => ((p - ((p - x + offset % p) % p) + p * Math.sign (offset)) % p) * step);
 			
 			for (let js = start; js.some (j => j < block_size); js = js.map (j => j + p)) {
 				for (let j of js) {
-					if (j < block_size) {
+					if (j >= 0 && j < block_size) {
 						do {
 							tmp_factors[j][i]++;
 							tmp_vector[j] = tmp_vector[j].divide (p);

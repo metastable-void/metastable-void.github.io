@@ -89,9 +89,9 @@ export async function* factorize (n) {
 		let last_tick = time_sieving_start;
 		
 		worker1.postMessage ({command: 'sieving'
-			, primeBase, multiples, sqrt, offset: 0, step: 1});
+			, input: n.toString (), primeBase, multiples, sqrt, offset: 0, step: 1});
 		worker2.postMessage ({command: 'sieving'
-			, primeBase, multiples, sqrt, offset: -1, step: -1});
+			, input: n.toString (), primeBase, multiples, sqrt, offset: -1, step: -1});
 		
 		const factors = await new Promise ((resolve, reject) => {
 			// Factorization of squares over the factor base

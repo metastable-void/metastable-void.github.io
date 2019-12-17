@@ -1607,7 +1607,8 @@ const init = async input => {
 	return {command: 'init_done', primeBase: b_primes, multiples: p_divisibles, sqrt: ceil_sqrt_n.toString ()};
 };
 
-const sieving = async (primeBase, multiples, sqrt, offset, step) => {
+const sieving = async (input, primeBase, multiples, sqrt, offset, step) => {
+	const n = bigInt (input);
 	const ceil_sqrt_n = bigInt (sqrt);
 	
 	const block_size = 256;
@@ -1739,7 +1740,7 @@ onmessage = ev => {
 			break;
 		
 		case 'sieving':
-			sieving (data.primeBase, data.multiples, data.sqrt, data.offset, data.step)
+			sieving (data.input, data.primeBase, data.multiples, data.sqrt, data.offset, data.step)
 			.then (result => postMessage (result))
 			.catch (e => console.error ('Error during sieving():', e));
 			break;

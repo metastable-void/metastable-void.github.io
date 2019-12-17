@@ -1650,7 +1650,7 @@ const sieving = async (input, primeBase, multiples, sqrt, offset, step) => {
 							postMessage ({command: 'smooth_found'
 								, root, factors: tmp_factors[j]});
 						}
-					} else {
+					} else if (step < 0 && offset > step * block_size) {
 						console.log ({p, start, j, offset});
 					}
 				}

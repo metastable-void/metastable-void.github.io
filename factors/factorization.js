@@ -1,19 +1,4 @@
 /* -*- tab-width: 4; indent-tabs-mode: t -*- */
-/*
-	Copyright 2019 (C) 東大女装子コンテスト実行委員会
-
-	Licensed under the Apache License, Version 2.0 (the "License");
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
-
-	https://www.apache.org/licenses/LICENSE-2.0
-
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an "AS IS" BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License.
-*/
 
 'use strict'; // for non-module scripts
 
@@ -381,7 +366,7 @@ const factor = async input => {
 	}
 	
 	timer ('Staring quadratic sieve...');
-	console.log ('n =', input, '(', n.bitLength ().value, 'bits)');
+	console.log ('n =', input.toString (), '(', n.bitLength ().toString (), 'bits)');
 	
 	const ceil_sqrt_n = ceil_sqrt (n);
 	const block_size = 256;
@@ -442,7 +427,7 @@ const factor = async input => {
 		
 		for (let i = 0; i < k2; i++) {
 			const p = b_primes[i];
-			const start = p_divisibles[i].map (x => (p - ((p + offset - x) % p)) % p);
+			const start = p_divisibles[i].map (x => (p - ((p - x + offset % p) % p)) % p);
 			
 			for (let js = start; js.some (j => j < block_size); js = js.map (j => j + p)) {
 				for (let j of js) {
@@ -484,14 +469,15 @@ const factor = async input => {
 	}
 	
 	const kernel = bits.getKernel ();
+	const rank = bits.rank;
 	
 	timer ('Done calculating linear algebra over finite field...');
 	await Promise.resolve ();
-	console.log ('reduced matrix:', 'rank =', bits.rank);
+	console.log ('reduced matrix:', 'rank =', rank);
 	
 	console.log ('nontrivial dependencies:', kernel.length);
 	for (let basis of kernel) {
-		console.log ('basis of the kernel:', ... basis);
+		console.log ('A vector of the basis of the kernel:', ... basis);
 		let e = new Uint32Array (k2);
 		let x = bigInt[1];
 		const roots = [];

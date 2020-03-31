@@ -11,6 +11,7 @@ screen_name やアイコンは未確定です．
 - アカウントの呼称: 真空大学
 - 標語: *Undefined.*
 - Twitter: [@UTokyoStudents](https://twitter.com/UTokyoStudents)
+- Pronoun (for this account): they/them
 - 属性: 東京大学理科2類
 - 実質中卒
 - 教養学部学生自治会理事 (2020-01--)

@@ -9,6 +9,7 @@ page.lang: ja
 - 標語・アカウントの呼称: **真空は準安定** (假真空)
 - 中身の名前: 真空 (しんくう，zhenkong，まそら, etc.)
 - Twitter: [@_uts2](https://twitter.com/_uts2)
+- Pronoun (for this account): they/them
 - 属性: 年金受給者・まだ一応どこかの大学に籍が残っている大学生（放校になりそう）
 - 実質中卒
 - 国民年金保険料法定免除

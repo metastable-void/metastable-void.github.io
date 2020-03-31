@@ -10,6 +10,7 @@ page.lang: ja
 - 名前: メンヘラ.org（準公式アカウント）
 - 標語: **真空の相転移** (真空相变)
 - Twitter: [@menhera_org](https://twitter.com/menhera_org)
+- Pronoun (for this account): she/her, they/them
 - 属性: 中卒相当・既婚・形式上はJD
 - メンヘラクラスタ
 - 非医クラ

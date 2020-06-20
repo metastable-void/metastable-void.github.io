@@ -1,57 +1,37 @@
 ---
 layout: default
-title: "@_uts2"
+title: "@menhera_org"
 page.lang: ja
 ---
 
-# Twitter account: @_uts2
+# Twitter account: @menhera_org
+メンヘラ.org → [公式サイト](https://menhera.org/)
 
-- 標語・アカウントの呼称: **真空は準安定** (假真空)
-- 中身の名前: 真空 (しんくう，zhenkong，まそら, etc.)
-- Twitter: [@_uts2](https://twitter.com/_uts2)
-- Pronoun (for this account): they/them
-- 属性: 年金受給者・まだ一応どこかの大学に籍が残っている大学生（放校になりそう）
-- 実質中卒
-- 国民年金保険料法定免除
+- 名前: メンヘラ.org（準公式アカウント）
+- 標語: **真空の相転移** (真空相变)
+- Twitter: [@menhera_org](https://twitter.com/menhera_org)
+- Pronoun (for this account): she/her, they/them
+- 属性: 中卒相当・既婚・形式上はJD
+- メンヘラクラスタ
 - 非医クラ
-- 東大系インカレ多数所属
-  - 地理部67期（無職）
-  - 支援活動 @ [東京大学TOPIA](https://topiaut.wordpress.com/)
-  - システム開発担当 (2017, 2018, 2019) @ [東大女装子コンテスト（じょそこん）](https://www.josocon.u-tokyo.eu.org/)
+- 所属団体
+  - 東京大学地文研究会地理部67期（無職）
+  - Web Project Manager (2017, 2018, 2019) at [東大女装子コンテスト（じょそこん）](https://www.josocon.u-tokyo.eu.org/)
+  - Activist at [東京大学TOPIA](https://topiaut.wordpress.com/)
 
-## 活動
-- 旅行
+## 参加したことがあるもの
+
+- 初年次ゼミ（公衆衛生）
+- 東大ぱてゼミ
+- LGBT医療福祉フォーラム (2018) スタッフ
+- 医療の光と影ゼミ（病院実習・路上生活者調査実習）
+- 障害者のリアルゼミ（2019S,A also @NHK）
+- Tea Time Tech Lab 2019 (@Google Japan)
+- 東大ガールズハッカソン 2019
+- #わっふる駒場2019
 
 ## Past name
 
-- @ Evidence-based happiness
-- @ to be M.D.
-- À la recherche des forces perdues
-- 真空は過冷却
-- 真空は凝固点が高い
-- 真空是亚稳态的
-- #春から休学 (療養中)
+- 相転移（過去を反省して，次の領域へ）
 
-
-## Past bio
-
-Personal thoughts linked to my real identity (no professional advice provided here)
-
-I value compliance
-
-Il y a avenir qui doit se réaliser
-
-狂気をたいせつに / すべての人が安心して利用できるTwitterのために
-
-平均知能・テストができるので知的障害ではない
-
-このアカウントへのブロックは障害者差別であり規約違反であり私へ危害を加えたものとみなします()
-
-日本語話者のマナーが悪いので日本語で書きます()
-
-専門家でなくても当事者でありたい
-
-社会制度オタク
-
-Justice on the universe without free will or any purpose
 

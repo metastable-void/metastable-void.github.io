@@ -11,3 +11,16 @@ int main (void) {
     return *ptr;
 }
 {% endhighlight %}
+
+## It's unsafe!
+
+{% highlight rust linenos %}
+use std::process::ExitCode;
+
+fn main() -> ExitCode {
+    unsafe {
+        let ptr: *const u8 = 0 as *const u8;
+        ExitCode::from(*ptr)
+    }
+}
+{% endhighlight %}

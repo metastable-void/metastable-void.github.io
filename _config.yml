@@ -1,12 +1,9 @@
 # -*- tab-width: 2; indent-tabs-mode: nil -*-
 
-url: "https://www.exec.su" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://metastable-void.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 baseurl: "" # the subpath of your site, e.g. /blog
 
-title: "$ exec su -" # the name of your site, e.g. ACME Corp.
+title: "metastable-void" # the name of your site, e.g. ACME Corp.
 
 lang: "en-US"
-
-include: ["_uts2"]
-

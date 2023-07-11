@@ -3,7 +3,7 @@
 // Define globalThis.bigInt
 import './BigInteger.min.js';
 
-const WORKER_URI = 'https://www.exec.su/factors/factorization-worker.js';
+const WORKER_URI = '/factors/factorization-worker.js';
 
 async function findFactors (n, smoothSquaresFactors, smoothRoots, primeBase) {
 	const worker = new Worker (WORKER_URI);
